@@ -22,7 +22,13 @@ recognize the name.
 
 '''
 
+import hashlib
 def pass_hash(x):
-    import hashlib
     hashed_passwd = hashlib.md5(str(x).encode('utf-8')).hexdigest()
     return hashed_passwd
+
+  # ---------- OR ----------
+  
+from hashlib import md5
+def pass_hash(str):
+    return md5(str.encode()).hexdigest()
